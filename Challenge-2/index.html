@@ -30,15 +30,55 @@
           <button
             class="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BCR</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-2">
+                  <a
+                    class="nav-link body-medium active"
+                    aria-current="page"
+                    href="#"
+                    >Our Services</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link body-medium" href="#">Why Us</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link body-medium" href="#">Testimonial</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link body-medium" href="#">FAQ</a>
+                </li>
+              </ul>
+              <button class="btn button-primary ms-2" type="submit">
+                Register
+              </button>
+            </div>
+          </div>
+          <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item mx-2">
                 <a
@@ -61,7 +101,7 @@
             <button class="btn button-primary ms-2" type="submit">
               Register
             </button>
-          </div>
+          </div> -->
         </nav>
       </div>
       <div class="header position-relative">
@@ -211,13 +251,13 @@
 
     <!-- Testimonial -->
     <section class="testimonial mt-100 pb-lg-5">
-      <div class="testimonial-title row text-center">
+      <div class="testimonial-title row text-center w-100 m-0">
         <h3 class="title-bold">Testimonial</h3>
         <p class="body-light">
           Berbagai review positif dari para pelanggan kami
         </p>
       </div>
-      <div class="row mt-lg-4">
+      <div class="row mt-lg-4 w-100 m-0">
         <div class="container-lg">
           <div class="swiper-custom">
             <!-- Slider main container -->
@@ -227,7 +267,7 @@
                 <!-- Slides -->
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <div class="row h-100 w-100 m-lg-0">
+                    <div class="row h-auto w-100 m-lg-0 pt-5 pb-5">
                       <div
                         class="col-12 col-lg-3 testimonial-item-img my-auto d-flex justify-content-center"
                       >
@@ -297,14 +337,14 @@
                           ipsum dolor sit amet, consectetur adipiscing elit, sed
                           do eiusmod”
                         </p>
-                        <p class="body-medium">John Dee 32, Bromo</p>
+                        <p class="body-medium mb-0">John Dee 32, Bromo</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <div class="row h-100 w-100 m-lg-0">
+                    <div class="row h-auto w-100 m-lg-0 pt-5 pb-5">
                       <div
                         class="testimonial-item-img col-lg-3 my-auto d-flex justify-content-center"
                       >
@@ -374,14 +414,14 @@
                           ipsum dolor sit amet, consectetur adipiscing elit, sed
                           do eiusmod”
                         </p>
-                        <p class="body-medium">John Dee 32, Bromo</p>
+                        <p class="body-medium mb-0">John Dee 32, Bromo</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <div class="row h-100 w-100 m-lg-0">
+                    <div class="row h-auto w-100 m-lg-0 pt-5 pb-5">
                       <div
                         class="testimonial-item-img col-lg-3 my-auto d-flex justify-content-center"
                       >
@@ -451,14 +491,14 @@
                           ipsum dolor sit amet, consectetur adipiscing elit, sed
                           do eiusmod”
                         </p>
-                        <p class="body-medium">John Dee 32, Bromo</p>
+                        <p class="body-medium mb-0">John Dee 32, Bromo</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <div class="row h-100 w-100 m-lg-0">
+                    <div class="row h-auto w-100 m-lg-0 pt-5 pb-5">
                       <div
                         class="testimonial-item-img col-lg-3 my-auto d-flex justify-content-center"
                       >
@@ -528,14 +568,14 @@
                           ipsum dolor sit amet, consectetur adipiscing elit, sed
                           do eiusmod”
                         </p>
-                        <p class="body-medium">John Dee 32, Bromo</p>
+                        <p class="body-medium mb-0">John Dee 32, Bromo</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <div class="row h-100 w-100 m-lg-0">
+                    <div class="row h-auto w-100 m-lg-0 pt-5 pb-5">
                       <div
                         class="testimonial-item-img col-lg-3 my-auto d-flex justify-content-center"
                       >
@@ -605,14 +645,14 @@
                           ipsum dolor sit amet, consectetur adipiscing elit, sed
                           do eiusmod”
                         </p>
-                        <p class="body-medium">John Dee 32, Bromo</p>
+                        <p class="body-medium mb-0">John Dee 32, Bromo</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <div class="row h-100 w-100 m-lg-0">
+                    <div class="row h-auto w-100 m-lg-0 pt-5 pb-5">
                       <div
                         class="testimonial-item-img col-lg-3 my-auto d-flex justify-content-center"
                       >
@@ -682,7 +722,7 @@
                           ipsum dolor sit amet, consectetur adipiscing elit, sed
                           do eiusmod”
                         </p>
-                        <p class="body-medium">John Dee 32, Bromo</p>
+                        <p class="body-medium mb-0">John Dee 32, Bromo</p>
                       </div>
                     </div>
                   </div>

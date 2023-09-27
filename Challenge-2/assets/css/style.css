@@ -82,6 +82,10 @@ body {
   width: 100%;
 }
 
+.navbar-toggler {
+  border-style: none;
+}
+
 .navbar-logo {
   width: 100px;
   height: 34px;
@@ -123,11 +127,11 @@ body {
 
 .testimonial-item {
   width: 619px;
-  height: 270px;
+  height: auto;
   border-radius: 8px;
   background-color: var(--softblue);
   border-style: none;
-  margin: 0 16px;
+  /* margin: 0 16px; */
 }
 
 .swiper-button-next,
@@ -181,13 +185,12 @@ body {
 /* ++ MOBILE VERSION ++ */
 
 @media (max-width: 360px) {
-  .container-lg {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .mt-100 {
     margin-top: 3.75rem !important;
+  }
+
+  #offcanvasNavbar {
+    width: 11.25rem;
   }
   .header {
     height: 657px;
@@ -213,12 +216,12 @@ body {
   }
 
   .testimonial-item {
-    width: auto;
+    width: 100%;
     height: auto;
     border-radius: 8px;
     background-color: var(--softblue);
     border-style: none;
-    margin: 0 16px;
+    /* margin: 0 16px; */
     display: flex;
     justify-content: center !important;
   }
