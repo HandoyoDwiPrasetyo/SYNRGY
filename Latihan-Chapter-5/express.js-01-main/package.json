@@ -1,0 +1,12 @@
+{
+  "name": "binar-sme-chapter-05-topic-01-express-js-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "express": "^4.18.2"
+  }
+}
