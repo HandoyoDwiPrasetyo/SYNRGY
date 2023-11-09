@@ -1,0 +1,54 @@
+body {
+  background-color: #f4f5f7;
+}
+
+.main-color {
+  background-color: #0d28a6;
+}
+
+.second-color {
+  background-color: #cfd4ed;
+}
+
+.box-main {
+  width: 2.125rem;
+  height: 2.125rem;
+}
+
+.main-menu {
+  width: 4.375rem;
+  height: 4rem;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.main-menu:hover {
+  background-color: #cfd4ed;
+  opacity: 0.5;
+  color: white;
+}
+
+.offcanvas-width {
+  width: 14rem !important;
+}
+
+.sidebar-show {
+  margin-left: 14rem !important;
+}
+
+.offcanvas-main {
+  width: 4.375rem !important;
+}
+
+.offcanvas-submenu {
+  width: 18.125rem !important;
+}
+
+.main-content {
+  margin-left: 18.125rem;
+}
+
+.modal-img-delete {
+  width: 153px;
+  height: 121px;
+}
