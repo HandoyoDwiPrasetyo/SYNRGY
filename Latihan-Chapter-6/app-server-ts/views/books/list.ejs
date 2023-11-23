@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+  </head>
+  <body>
+    <h1>Book List</h1>
+    <div>
+      <a href="/books/create">Add new book</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Genre</th>
+          <th>Published Year</th>
+          <th>Available</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((item) => { %>
+        <tr>
+          <td><%= item.books_id %></td>
+          <td><%= item.title %></td>
+          <td><%= item.author %></td>
+          <td><%= item.isbn %></td>
+          <td><%= item.genre %></td>
+          <td><%= item.published_year %></td>
+          <td><%= item.copies_available %></td>
+          <td>
+            <a href="/books/update">edit</a>
+            <a href="/books/detail">show</a>
+            <a href="/books/delete">delete</a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

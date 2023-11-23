@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Create</title>
+  </head>
+  <body>
+    <h1>Add new book</h1>
+    <form
+      method="post"
+      action="/api/books/create"
+      enctype="multipart/form-data"
+    >
+      <div>
+        <label for="title">Title</label>
+        <div>
+          <input type="text" name="title" id="title" />
+        </div>
+      </div>
+      <div>
+        <label for="author">Author</label>
+        <div>
+          <input type="text" name="author" id="author" />
+        </div>
+      </div>
+      <div>
+        <label for="isbn">ISBN</label>
+        <div>
+          <input type="text" name="isbn" id="isbn" />
+        </div>
+      </div>
+      <div>
+        <label for="published_year">Published Year</label>
+        <div>
+          <input type="text" name="published_year" id="published_year" />
+        </div>
+      </div>
+      <div>
+        <label for="genre">Genre</label>
+        <div>
+          <input type="text" name="genre" id="genre" />
+        </div>
+      </div>
+      <div>
+        <label for="copies_available">Copies Available</label>
+        <div>
+          <input type="text" name="copies_available" id="copies_available" />
+        </div>
+      </div>
+      <div>
+        <label for="total_copies">Total Copies</label>
+        <div>
+          <input type="text" name="total_copies" id="total_copies" />
+        </div>
+      </div>
+
+      <div>
+        <label for="picture">Picture</label>
+        <div>
+          <input type="file" name="picture" id="picture" />
+        </div>
+      </div>
+
+      <div>
+        <button type="submit">Save</button>
+        <a href="/books">Cancel</a>
+      </div>
+    </form>
+  </body>
+</html>
