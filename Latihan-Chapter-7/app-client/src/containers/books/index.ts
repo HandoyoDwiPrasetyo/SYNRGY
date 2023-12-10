@@ -4,4 +4,4 @@
 export { default as BookListContainer } from "./list/list";
 export { default as BookCreateContainer } from "./create/create";
 export { default as BookUpdateContainer } from "./update/update";
-export { default as BookDetailContainer } from "./detail/detail";
+// export { default as BookDetailContainer } from "./detail/detail";

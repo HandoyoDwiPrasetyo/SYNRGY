@@ -1,5 +1,5 @@
-import { v2 as cloudinary } from 'cloudinary';
-import multer from 'multer';
+import { v2 as cloudinary } from "cloudinary";
+import multer from "multer";
 
 class Media {
   private _upload;
@@ -7,9 +7,9 @@ class Media {
   constructor() {
     this._upload = multer({ storage: multer.memoryStorage() });
     cloudinary.config({
-      cloud_name: 'dejzl6ltm',
-      api_key: '352252394137947',
-      api_secret: 'Dh-Ln1exdFdPxiwjFlhBhD3o5zU',
+      cloud_name: "dejzl6ltm",
+      api_key: "352252394137947",
+      api_secret: "Dh-Ln1exdFdPxiwjFlhBhD3o5zU",
     });
     this._storage = cloudinary;
   }
