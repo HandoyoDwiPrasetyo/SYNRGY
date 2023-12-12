@@ -2,10 +2,10 @@ import { LoadingButton } from "@mui/lab";
 import CommonPage from "../../../components/common-page/common-page";
 import { Autocomplete, Box, Stack, Switch, TextField } from "@mui/material";
 import { CloudUpload } from "@mui/icons-material";
-import useAction from "./create.hooks";
-import { VisuallyHiddenInput } from "./create.styled";
+import useAction from "./update.hooks";
+import { VisuallyHiddenInput } from "./update.styled";
 
-export default function Create() {
+export default function Update() {
   const {
     formValues,
     handleSubmit,
@@ -14,13 +14,14 @@ export default function Create() {
     loadingSubmit,
     setFormValues,
     fileItem,
+    data,
   } = useAction();
 
   return (
     <CommonPage
       withBack
       component={"form"}
-      title="Create new Car"
+      title="Update Car"
       actionElement={
         <LoadingButton
           type="submit"
@@ -41,7 +42,6 @@ export default function Create() {
           name="plate"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Plate"
           onChange={(e) =>
             setFormValues({
               ...formValues,
@@ -49,13 +49,13 @@ export default function Create() {
             })
           }
           variant="filled"
-          value={formValues?.plate}
+          placeholder={data?.plate}
+          value={formValues?.plate || ""}
         />
         <TextField
           name="manufacture"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Manufacture"
           onChange={(e) =>
             setFormValues({
               ...formValues,
@@ -63,13 +63,13 @@ export default function Create() {
             })
           }
           variant="filled"
-          value={formValues?.manufacture}
+          placeholder={data?.manufacture}
+          value={formValues?.manufacture || ""}
         />
         <TextField
           name="model"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Model"
           onChange={(e) =>
             setFormValues({
               ...formValues,
@@ -77,13 +77,13 @@ export default function Create() {
             })
           }
           variant="filled"
-          value={formValues?.model}
+          placeholder={data?.model}
+          value={formValues?.model || ""}
         />
         <TextField
           name="rentPerDay"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Rental per hari"
           type="number"
           onChange={(e) =>
             setFormValues({
@@ -92,12 +92,13 @@ export default function Create() {
             })
           }
           variant="filled"
+          placeholder={data?.rentPerDay}
+          value={formValues?.rentPerDay || ""}
         />
         <TextField
           name="capacity"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Capacity"
           type="number"
           onChange={(e) =>
             setFormValues({
@@ -106,12 +107,13 @@ export default function Create() {
             })
           }
           variant="filled"
+          placeholder={data?.capacity}
+          value={formValues?.capacity || ""}
         />
         <TextField
           name="description"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Description"
           onChange={(e) =>
             setFormValues({
               ...formValues,
@@ -119,12 +121,13 @@ export default function Create() {
             })
           }
           variant="filled"
+          placeholder={data?.description}
+          value={formValues?.description || ""}
         />
         <TextField
           name="availableAt"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Available at"
           type="date"
           onChange={(e) =>
             setFormValues({
@@ -133,12 +136,13 @@ export default function Create() {
             })
           }
           variant="filled"
+          placeholder={data?.availableAt}
+          value={formValues?.availableAt || ""}
         />
         <TextField
           name="transmission"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Transmission"
           onChange={(e) =>
             setFormValues({
               ...formValues,
@@ -146,12 +150,13 @@ export default function Create() {
             })
           }
           variant="filled"
+          placeholder={data?.transmission}
+          value={formValues?.transmission || ""}
         />
         <TextField
           name="type"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Type"
           onChange={(e) =>
             setFormValues({
               ...formValues,
@@ -159,12 +164,13 @@ export default function Create() {
             })
           }
           variant="filled"
+          placeholder={data?.type}
+          value={formValues?.type || ""}
         />
         <TextField
           name="year"
           size="small"
           sx={{ width: "100%", mb: 3 }}
-          label="Year"
           type="number"
           onChange={(e) =>
             setFormValues({
@@ -173,6 +179,8 @@ export default function Create() {
             })
           }
           variant="filled"
+          placeholder={data?.year}
+          value={formValues?.year || ""}
         />
         <Autocomplete
           multiple
@@ -192,8 +200,9 @@ export default function Create() {
               name="options"
               size="small"
               sx={{ width: "100%", mb: 3 }}
-              label="Options"
               variant="filled"
+              placeholder={data?.options}
+              value={formValues?.options || ""}
             />
           )}
         />
@@ -215,8 +224,9 @@ export default function Create() {
               name="specs"
               size="small"
               sx={{ width: "100%", mb: 3 }}
-              label="Specs"
               variant="filled"
+              placeholder={data?.specs}
+              value={formValues?.specs || ""}
             />
           )}
         />
@@ -234,10 +244,21 @@ export default function Create() {
             onChange={handleUploadImage}
           />
         </LoadingButton>
-        {fileItem && fileItem.url && (
+        {fileItem ? (
+          fileItem &&
+          fileItem.url && (
+            <Box>
+              <img
+                src={fileItem.secure_url}
+                alt="preview"
+                style={{ width: "100%", objectFit: "cover" }}
+              />
+            </Box>
+          )
+        ) : data?.image == null ? null : (
           <Box>
             <img
-              src={fileItem.secure_url}
+              src={data?.image?.url}
               alt="preview"
               style={{ width: "100%", objectFit: "cover" }}
             />
@@ -249,6 +270,8 @@ export default function Create() {
             <Switch
               name="available"
               title="Available"
+              placeholder={data.available}
+              value={formValues?.available}
               onChange={(e) =>
                 setFormValues({
                   ...formValues,

@@ -1,22 +1,39 @@
-import { ChangeEvent, FormEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ICars } from "../cars.types";
 import { IFileItem } from "../../../services/types";
 import axios from "axios";
 
-export default function useCreate() {
+export default function useUpdate() {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState<ICars | undefined>();
   const [loadingImage, setLoadingImage] = useState<boolean>(false);
   const [loadingSubmit, setLoadingSubmit] = useState<boolean>(false);
   const [fileItem, setFileItem] = useState<IFileItem | undefined>();
+  const [data, setData] = useState([]) as any;
+  const { id } = useParams();
+
+  useEffect(() => {
+    getDataById();
+  }, []);
+
+  const getDataById = async () => {
+    try {
+      const response = (await axios.get(
+        `http://localhost:8000/api/cars/${id}`
+      )) as any;
+      setData(response.data.data);
+    } catch (error) {
+      console.log("Error = ", error);
+    }
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLDivElement>) => {
     e.preventDefault();
     try {
       setLoadingSubmit(true);
       const payload = { ...formValues, image: fileItem };
-      await axios.post("http://localhost:8000/api/cars", payload, {
+      await axios.put(`http://localhost:8000/api/cars/${id}`, payload, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -63,5 +80,6 @@ export default function useCreate() {
     loadingImage,
     loadingSubmit,
     fileItem,
+    data,
   };
 }

@@ -49,7 +49,7 @@ router.delete("/cars/:id", middlewareAuth.authorize, controllerCar.remove());
 // upload
 router.post(
   "/cars/upload",
-  [middlewareAuth.authorize, media.upload.single("cover")],
+  [middlewareAuth.authorize, media.upload.single("image")],
   controllerCar.upload()
 );
 
