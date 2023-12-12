@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import axios, { AxiosError } from "axios";
 import { FormEvent, useState } from "react";
+import PublicProvider from "../providers/PublicProvider";
 
 const LoginContainerStyled = styled.div`
   width: 100%;
@@ -79,62 +80,64 @@ export default function Login() {
   };
 
   return (
-    <LoginContainerStyled>
-      <Background>
-        <img
-          src="https://res.cloudinary.com/dnrbxdpyz/image/upload/v1702108761/vbezryfxyxdlgolszvrj.png"
-          alt="background-login"
-          style={{ width: "100%", height: "100%" }}
-        />
-      </Background>
-      <Form onSubmit={handleSubmit}>
-        <div style={{ width: "60%" }}>
-          <Brand />
-          <h2>Welcome, Admin BCR</h2>
-          {alert && alert.message && (
-            <Alert sx={{ mb: 3 }} severity={alert.severity}>
-              {alert.message}
-            </Alert>
-          )}
-          <InputLabel
-            shrink
-            htmlFor="username-input"
-            sx={{ fontSize: "1.25em" }}
-          >
-            Username
-          </InputLabel>
-          <TextField
-            name="username"
-            id="username"
-            placeholder="Type your username"
-            sx={{ width: "100%", mb: 3 }}
-            onChange={(e) => setUsername(e.target.value)}
+    <PublicProvider>
+      <LoginContainerStyled>
+        <Background>
+          <img
+            src="https://res.cloudinary.com/dnrbxdpyz/image/upload/v1702108761/vbezryfxyxdlgolszvrj.png"
+            alt="background-login"
+            style={{ width: "100%", height: "100%" }}
           />
-          <InputLabel
-            shrink
-            htmlFor="password-input"
-            sx={{ fontSize: "1.25em" }}
-          >
-            Password
-          </InputLabel>
-          <TextField
-            name="password"
-            id="password"
-            placeholder="Type your password"
-            type="password"
-            sx={{ width: "100%", mb: 5 }}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <Button
-            type="submit"
-            variant="contained"
-            size="small"
-            sx={{ width: "100%" }}
-          >
-            Sign In
-          </Button>
-        </div>
-      </Form>
-    </LoginContainerStyled>
+        </Background>
+        <Form onSubmit={handleSubmit}>
+          <div style={{ width: "60%" }}>
+            <Brand />
+            <h2>Welcome, Admin BCR</h2>
+            {alert && alert.message && (
+              <Alert sx={{ mb: 3 }} severity={alert.severity}>
+                {alert.message}
+              </Alert>
+            )}
+            <InputLabel
+              shrink
+              htmlFor="username-input"
+              sx={{ fontSize: "1.25em" }}
+            >
+              Username
+            </InputLabel>
+            <TextField
+              name="username"
+              id="username"
+              placeholder="Type your username"
+              sx={{ width: "100%", mb: 3 }}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <InputLabel
+              shrink
+              htmlFor="password-input"
+              sx={{ fontSize: "1.25em" }}
+            >
+              Password
+            </InputLabel>
+            <TextField
+              name="password"
+              id="password"
+              placeholder="Type your password"
+              type="password"
+              sx={{ width: "100%", mb: 5 }}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              size="small"
+              sx={{ width: "100%" }}
+            >
+              Sign In
+            </Button>
+          </div>
+        </Form>
+      </LoginContainerStyled>
+    </PublicProvider>
   );
 }
