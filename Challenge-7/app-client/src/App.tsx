@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import Login from "./pages/Login";
 import { theme } from "./config/theme";
-import { CarList, CarCreate, CarUpdate } from "./pages/cars";
+import { CarList, CarCreate, CarUpdate, CarDetail } from "./pages/cars";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/update/:id",
     element: <CarUpdate />,
+  },
+  {
+    path: "/detail/:id",
+    element: <CarDetail />,
   },
 ]);
 
